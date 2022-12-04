@@ -120,9 +120,9 @@ public class Main {
 		n.done();
 		components.get(componentIndex).add(n);
 		for (int i = 0; i < nodes.size(); i++) {
-			if (i == n.getValue()) continue;
+			if (n.getValue() == i) continue;
 			if (edges[n.getValue()][i] != null) {
-				temp = originalNodes.get(edges[n.getValue()][i]);
+				temp = originalNodes.get(i);
 				assert n != temp : "temp is the same as n";
 				if (temp.getMinValue() < n.getMinValue()) {
 					n.setMinValue(temp.getMinValue());
