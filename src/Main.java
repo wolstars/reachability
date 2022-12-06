@@ -65,7 +65,17 @@ public class Main {
 		edges[5][4] = 3;
 	}
 	
-	
+//	public void makeEdges() {
+//		edges = new Integer[nodes.size()][nodes.size()];
+//		for (int i = 0; i < nodes.size(); i++) {
+//			edges[i][i] = 0;
+//		}
+//		edges[2][1] = 3;
+//		edges[1][0] = 3;
+//		edges[0][2] = 3;
+//	}
+
+
 	public void transpose() {
 		Integer temp;
 		Integer size = nodes.size() - 1;
@@ -130,6 +140,9 @@ public class Main {
 				if (!temp.isDone()) {
 					temp.setPath(n);
 					DFS_VISIT(temp);
+				}
+				if (temp.getMinValue() < n.getMinValue()) {
+					n.setMinValue(temp.getMinValue());
 				}
 			}
 		}
